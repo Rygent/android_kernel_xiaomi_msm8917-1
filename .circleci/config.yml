@@ -2,13 +2,12 @@ version: 2.1
 jobs:
   compile:
     docker:
-      - image: ryu2374/docker:latest
+      - image: ubuntu:latest
     steps:
       - run: apt-get -y update && apt-get -y upgrade && apt-get -y install wget
-      - run: git clone https://github.com/ryu2374/android_kernel_xiaomi_msm8917-1 --depth=1 -b tr-10-caf
-      - run: wget https://raw.githubusercontent.com/ryu2374/scripts/master/rolex/circle
-      - run: chmod +x circle
-      - run: bash circle
+      - run: wget https://raw.githubusercontent.com/ryu2374/scripts/ru/compiler.sh
+      - run: chmod +x compiler.sh
+      - run: bash compiler.sh
 
 workflows:
   version: 2.1
