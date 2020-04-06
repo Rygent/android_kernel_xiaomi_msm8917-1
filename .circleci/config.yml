@@ -6,7 +6,7 @@ jobs:
     steps:
       - run: apt-get -y update && apt-get -y upgrade
       - run: git clone --depth=1 -j$(nproc --all) -b tr-10-caf https://github.com/ryu2374/android_kernel_xiaomi_msm8917-1 --single-branch .
-      - run: https://raw.githubusercontent.com/ryu2374/Scripts/master/circle
+      - run: wget https://raw.githubusercontent.com/ryu2374/Scripts/master/circle
       - run: chmod +x circle
       - run: bash circle
 
